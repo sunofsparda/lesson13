@@ -1,8 +1,0 @@
-[main]
-  certname = puppet-node1
-  server = puppet-server
-  environment = production
-  runinterval = 40s
-
-  report = true
-  reports = puppetdb

@@ -22,27 +22,18 @@ node default {
   notify { "Node ${::fqdn} is up and running!": }
 }
 
-node 'puppet-node1' {
-  class { 'nginx': }
-  class { '::mysql::server':
-    root_password => 'password',
-  }
-
-  mysql_database { 'prod_mdb':
-    ensure  =>  present,
-    charset =>  'utf8',
-  }
-
-  mysql_user { 'prod_user@localhost':
-    ensure  =>  present,
-    password_hash =>  mysql_password('prod_password'),
-  }
-
-  mysql_grant { 'prod_user@localhost/prod_mdb.*':
-    ensure  =>  present,
-    options =>  ['GRANT'],
-    privileges  =>  ['ALL'],
-    table =>  'prod_mdb.*',
-    user  =>  'prod_user@localhost',
+node 'puppet-server' {
+  # # Configure puppetdb
+  class { 'puppetdb::server':
+    database_host => '127.0.0.1',
+    confdir =>  '/etc/puppetlabs/puppetdb/conf.d',
+   }
+  # Configure the Puppet master to use puppetdb
+  class { 'puppetdb::master::config': }
+  class { 'puppetexplorer':
+    vhost_options => {
+      rewrites => [ { rewrite_rule => [
+        '^/api/metrics/v1/mbeans/puppetlabs.puppetdb.query.population:type=default,name=(.*)$  https://%{HTTP_HOST}/api/metrics/v1/mbeans/puppetlabs.puppetdb.population:name=$1 [R=301,L]'
+      ] } ] }
   }
 }

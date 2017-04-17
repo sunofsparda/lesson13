@@ -317,3 +317,5 @@ Could not find the X.Org or XFree86 Window System, skipping.
 ==> svr: Rsyncing folder: /home/student/workspace/lesson13/ => /vagrant
 ==> svr: Running provisioner: shell...
     svr: Running: /tmp/vagrant-shell20170417-15669-13ptpn0.sh
+==> svr: /bin/cp: cannot stat ‘/vagrant/puppet/puppet_conf.prod’: No such file or directory
+==> svr: Created symlink from /etc/systemd/system/multi-user.target.wants/puppetserver.service to /usr/lib/systemd/system/puppetserver.service.

@@ -10,9 +10,13 @@ yum install -y puppetserver > /dev/null 2>&1
 # yum install -y postgresql94-server postgresql94-contrib
 
 
-/bin/cp /vagrant/puppet/site_pp.prod /etc/puppetlabs/code/environments/production/manifests/site.pp
+
+/bin/cp /vagrant/puppet/site_pp.production /etc/puppetlabs/code/environments/production/manifests/site.pp
 /bin/cp /vagrant/puppet/autosign.conf /etc/puppetlabs/puppet/autosign.conf
 /bin/cp /vagrant/puppet/puppet_conf.prod /etc/puppetlabs/puppet/puppet.conf
+mkdir -p /etc/puppetlabs/code/environments/prod/{manifests,modules}
+/bin/cp /vagrant/site_pp.prod /etc/puppetlabs/code/environments/prod/manifests/site.pp
+
 
 systemctl enable puppetserver
 systemctl start puppetserver
@@ -39,11 +43,12 @@ systemctl disable firewalld
 puppet resource package puppetdb-terminus ensure=latest
 
 # PuppetDB » Installing PuppetDB From Packages
-puppet module install puppetlabs-puppetdb --version 5.1.2
-puppet module install puppetlabs-mysql --version 3.10.0 --environment production
 puppet module install puppetlabs-apache --version 1.11.0
+puppet module install puppetlabs-puppetdb --version 5.1.2
 puppet module install spotify-puppetexplorer --version 1.1.1
 puppet module install puppet-nginx --version 0.6.0 --environment prod
+puppet module install puppetlabs-mysql --version 3.10.0 --environment prod
+
 puppet agent -t --verbose
 
 echo 'test'

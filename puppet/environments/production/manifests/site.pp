@@ -1,6 +1,6 @@
 File { backup => false }
 
-node 'puppet-prod.local.minsk.epam.com' {
+node 'puppet-prod.local' {
   class { 'puppetdb':
     listen_address => '0.0.0.0',
   }

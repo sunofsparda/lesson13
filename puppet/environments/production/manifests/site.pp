@@ -1,9 +1,7 @@
 File { backup => false }
 
 node 'puppet-prod.local' {
-  class { 'puppetdb':
-    listen_address => '0.0.0.0',
-  }
+  class { 'puppetdb': }
   class { 'puppetdb::master::config': }
   
   class {'::puppetexplorer':

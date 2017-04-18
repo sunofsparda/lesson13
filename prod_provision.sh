@@ -25,7 +25,7 @@ source ~/.bashrc
 
 yum install postgresql94-server postgresql94-contrib -y
 /usr/pgsql-9.4/bin/postgresql94-setup initdb
-/bin/cp /vagrant/pg_hba.conf /var/lib/pgsql/9.4/data/
+/bin/cp /vagrant/puppet/pg_hba.conf /var/lib/pgsql/9.4/data/
 systemctl enable postgresql-9.4.service
 systemctl start postgresql-9.4.service
 cd /

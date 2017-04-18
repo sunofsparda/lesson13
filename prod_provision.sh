@@ -21,6 +21,8 @@ mkdir -p /etc/puppetlabs/code/environments/prod/{manifests,modules}
 systemctl enable puppetserver
 systemctl restart puppetserver
 
+setsebool -P httpd_can_network_connect on
+
 source ~/.bashrc
 
 yum install postgresql94-server postgresql94-contrib -y

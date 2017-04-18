@@ -14,6 +14,7 @@ yum install -y puppetserver > /dev/null 2>&1
 /bin/cp /vagrant/puppet/site_pp.production /etc/puppetlabs/code/environments/production/manifests/site.pp
 /bin/cp /vagrant/puppet/autosign.conf /etc/puppetlabs/puppet/autosign.conf
 /bin/cp /vagrant/puppet/puppet_conf.prod /etc/puppetlabs/puppet/puppet.conf
+/bin/cp /vagrant/puppet/puppetdb.conf /etc/puppetlabs/puppet/puppetdb.conf
 
 mkdir -p /etc/puppetlabs/code/environments/prod/{manifests,modules}
 /bin/cp /vagrant/puppet/site_pp.prod /etc/puppetlabs/code/environments/prod/manifests/site.pp

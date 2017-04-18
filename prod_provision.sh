@@ -16,7 +16,7 @@ yum install -y http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/pgdg-redhat94-
 
 mkdir -p /etc/puppetlabs/code/environments/prod/{manifests,modules}
 /bin/cp /vagrant/puppet/environments/prod/manifests/site.pp /etc/puppetlabs/code/environments/prod/manifests/site.pp
-/bin/cp /vagrant/puppet/puppetdb.conf /etc/puppetlabs/puppet/puppetdb.conf
+# /bin/cp /vagrant/puppet/puppetdb.conf /etc/puppetlabs/puppet/puppetdb.conf
 
 systemctl enable puppetserver
 systemctl restart puppetserver

@@ -29,14 +29,15 @@ iptables -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
 systemctl restart iptables
 
 
-# PuppetDB » Connecting Puppet Masters to PuppetDB
-puppet resource package puppetdb-terminus ensure=latest
-
 
 # PuppetDB » Installing PuppetDB From Packages
 puppet module install puppetlabs-apache --version 1.11.0
 puppet module install puppetlabs-puppetdb --version 5.1.2
 puppet module install spotify-puppetexplorer --version 1.1.1
+
+
+# PuppetDB » Connecting Puppet Masters to PuppetDB
+puppet resource package puppetdb-terminus ensure=latest
 
 
 # For env: prod

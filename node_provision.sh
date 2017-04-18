@@ -13,6 +13,7 @@ yum install -y puppet-agent > /dev/null 2>&1
 
 
 PATH=/opt/puppetlabs/bin:$PATH;export PATH
+
 puppet agent --test --verbose # --debug
 
 

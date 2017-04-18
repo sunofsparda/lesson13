@@ -1,5 +1,5 @@
 [main]
   certname = puppet-node1.local
   server = puppet-prod.local
-  environment = production
+  environment = prod
   runinterval = 40s

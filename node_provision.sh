@@ -10,8 +10,16 @@ yum install -y puppet-agent > /dev/null 2>&1
 # PATH=/opt/puppetlabs/bin:$PATH;export PATH
 # puppet resource package puppet ensure=latest
 
+systemctl stop iptables
+systemctl stop firewalld
+systemctl disable iptables
+systemctl disable firewalld
+
 /bin/cp /vagrant/puppet/puppet_conf.node /etc/puppetlabs/puppet/puppet.conf
 
 
 PATH=/opt/puppetlabs/bin:$PATH;export PATH
 puppet agent --test --verbose # --debug
+
+echo 'test'
+exit 0

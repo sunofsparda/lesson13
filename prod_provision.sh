@@ -27,8 +27,13 @@ sudo -u postgres psql -c "create database puppetdb owner puppetdb"
 PATH=/opt/puppetlabs/bin:$PATH;export PATH
 
 # configure PuppetDB server’s firewall to accept incoming connections on port 8081
-firewall-cmd --zone=public--add-port=8081/tcp --permanent 
-firewall-cmd --reload
+# firewall-cmd --zone=public--add-port=8081/tcp --permanent 
+# firewall-cmd --reload
+systemctl stop iptables
+systemctl stop firewalld
+systemctl disable iptables
+systemctl disable firewalld
+
 
 # PuppetDB » Connecting Puppet Masters to PuppetDB
 puppet resource package puppetdb-terminus ensure=latest
@@ -40,3 +45,6 @@ puppet module install puppetlabs-apache --version 1.11.0
 puppet module install spotify-puppetexplorer --version 1.1.1
 puppet module install puppet-nginx --version 0.6.0 --environment production
 puppet agent -t --verbose
+
+echo 'test'
+exit 0

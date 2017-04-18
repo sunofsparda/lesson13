@@ -1,5 +1,5 @@
 [main]
-  certname = puppet-node1.local
-  server = puppet-prod.local
+  certname = puppet-node1.local.minsk.epam.com
+  server = puppet-prod.local.minsk.epam.com
   environment = prod
   runinterval = 40s

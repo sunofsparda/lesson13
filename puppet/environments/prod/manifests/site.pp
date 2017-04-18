@@ -1,6 +1,6 @@
 File { backup => false }
 
-node 'puppet-node1.local' {
+node 'puppet-node1.local.minsk.epam.com' {
   class { 'nginx': }
   class { '::mysql::server':
     root_password => 'password',

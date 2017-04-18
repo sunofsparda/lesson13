@@ -1,6 +1,6 @@
 File { backup => false }
 
-node puppet-prod.local {
+node 'puppet-prod.local.minsk.epam.com' {
   class { 'puppetdb': }
   class { 'puppetdb::master::config': }
   

@@ -440,3 +440,52 @@ Could not find the X.Org or XFree86 Window System, skipping.
 ==> svr: }
 ==> svr: [mNotice: Preparing to install into /etc/puppetlabs/code/environments/production/modules ...[0m
 ==> svr: [mNotice: Downloading from https://forgeapi.puppet.com ...[0m
+==> svr: [mNotice: Installing -- do not interrupt ...[0m
+==> svr: /etc/puppetlabs/code/environments/production/modules
+==> svr: └─┬ puppetlabs-puppetdb ([0;36mv5.1.2[0m)
+==> svr:   ├── puppetlabs-firewall ([0;36mv1.8.2[0m)
+==> svr:   ├── puppetlabs-inifile ([0;36mv1.6.0[0m)
+==> svr:   └─┬ puppetlabs-postgresql ([0;36mv4.9.0[0m)
+==> svr:     ├── puppetlabs-apt ([0;36mv2.4.0[0m)
+==> svr:     ├── puppetlabs-concat ([0;36mv2.2.1[0m)
+==> svr:     └── puppetlabs-stdlib ([0;36mv4.16.0[0m)
+==> svr: [mNotice: Preparing to install into /etc/puppetlabs/code/environments/production/modules ...[0m
+==> svr: [mNotice: Downloading from https://forgeapi.puppet.com ...[0m
+==> svr: [mNotice: Installing -- do not interrupt ...[0m
+==> svr: /etc/puppetlabs/code/environments/production/modules
+==> svr: └─┬ puppetlabs-mysql ([0;36mv3.10.0[0m)
+==> svr:   ├── puppet-staging ([0;36mv2.2.0[0m)
+==> svr:   └── puppetlabs-stdlib ([0;36mv4.16.0[0m)
+==> svr: [mNotice: Preparing to install into /etc/puppetlabs/code/environments/production/modules ...[0m
+==> svr: [mNotice: Downloading from https://forgeapi.puppet.com ...[0m
+==> svr: [mNotice: Installing -- do not interrupt ...[0m
+==> svr: /etc/puppetlabs/code/environments/production/modules
+==> svr: └─┬ puppetlabs-apache ([0;36mv1.11.0[0m)
+==> svr:   ├── puppetlabs-concat ([0;36mv2.2.1[0m)
+==> svr:   └── puppetlabs-stdlib ([0;36mv4.16.0[0m)
+==> svr: [mNotice: Preparing to install into /etc/puppetlabs/code/environments/production/modules ...[0m
+==> svr: [mNotice: Downloading from https://forgeapi.puppet.com ...[0m
+==> svr: [mNotice: Installing -- do not interrupt ...[0m
+==> svr: /etc/puppetlabs/code/environments/production/modules
+==> svr: └─┬ spotify-puppetexplorer ([0;36mv1.1.1[0m)
+==> svr:   └── puppetlabs-stdlib ([0;36mv4.16.0[0m)
+==> svr: [mNotice: Preparing to install into /etc/puppetlabs/code/environments/production/modules ...[0m
+==> svr: [mNotice: Downloading from https://forgeapi.puppet.com ...[0m
+==> svr: [mNotice: Installing -- do not interrupt ...[0m
+==> svr: /etc/puppetlabs/code/environments/production/modules
+==> svr: └─┬ puppet-nginx ([0;36mv0.6.0[0m)
+==> svr:   ├── puppetlabs-apt ([0;36mv2.4.0[0m)
+==> svr:   ├── puppetlabs-concat ([0;36mv2.2.1[0m)
+==> svr:   └── puppetlabs-stdlib ([0;36mv4.16.0[0m)
+==> svr: [0;32mInfo: Retrieving pluginfacts[0m
+==> svr: [1;33mWarning: Unable to fetch my node definition, but the agent run will continue:[0m
+==> svr: [1;33mWarning: getaddrinfo: Name or service not known[0m
+==> svr: [1;31mError: /File[/opt/puppetlabs/puppet/cache/facts.d]: Failed to generate additional resources using 'eval_generate': getaddrinfo: Name or service not known[0m
+==> svr: [0;32mInfo: Retrieving plugin[0m
+==> svr: [1;31mError: /File[/opt/puppetlabs/puppet/cache/facts.d]: Could not evaluate: Could not retrieve file metadata for puppet:///pluginfacts: getaddrinfo: Name or service not known[0m
+==> svr: [1;31mError: /File[/opt/puppetlabs/puppet/cache/lib]: Failed to generate additional resources using 'eval_generate': getaddrinfo: Name or service not known[0m
+==> svr: [1;31mError: /File[/opt/puppetlabs/puppet/cache/lib]: Could not evaluate: Could not retrieve file metadata for puppet:///plugins: getaddrinfo: Name or service not known[0m
+==> svr: [1;31mError: Could not retrieve catalog from remote server: getaddrinfo: Name or service not known[0m
+==> svr: [1;33mWarning: Not using cache on failed catalog[0m
+==> svr: [1;31mError: Could not retrieve catalog; skipping run[0m
+==> svr: [1;31mError: Could not send report: getaddrinfo: Name or service not known[0m

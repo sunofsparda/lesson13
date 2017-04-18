@@ -1,6 +1,6 @@
 [main]
-  certname = puppet-server
-  server = puppet-server
+  certname = puppet-prod.local
+  server = puppet-prod.local
   environment = production
   runinterval = 1h
   strict_variables = true

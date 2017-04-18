@@ -20,7 +20,7 @@ mkdir -p /etc/puppetlabs/code/environments/prod/{manifests,modules}
 
 
 systemctl enable puppetserver
-systemctl start puppetserver
+systemctl restart puppetserver
 
 
 PATH=/opt/puppetlabs/bin:$PATH;export PATH

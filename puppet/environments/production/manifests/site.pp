@@ -1,10 +1,8 @@
 File { backup => false }
 
 node 'puppet-prod.local.minsk.epam.com' {
-  class { 'puppetdb': }
-  class { 'puppetdb::server':
-    database_host => '127.0.0.1',
-    confdir =>  '/etc/puppetlabs/puppetdb/conf.d',
+  class { 'puppetdb':
+    listen_address => '0.0.0.0',
   }
   class { 'puppetdb::master::config': }
   

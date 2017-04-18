@@ -16,6 +16,7 @@ yum install -y puppetserver > /dev/null 2>&1
 
 mkdir -p /etc/puppetlabs/code/environments/prod/{manifests,modules}
 /bin/cp /vagrant/puppet/environments/prod/manifests/site.pp /etc/puppetlabs/code/environments/prod/manifests/site.pp
+/bin/cp /vagrant/puppet/puppetdb.conf /etc/puppetlabs/puppet/puppetdb.conf
 
 
 systemctl enable puppetserver

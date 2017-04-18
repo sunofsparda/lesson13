@@ -6,6 +6,9 @@ grep -q -F '192.168.100.102 puppet-node1.local' /etc/hosts || echo '192.168.100.
 yum install -y epel-release > /dev/null 2>&1
 yum localinstall -y http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm > /dev/null 2>&1
 yum install -y puppetserver > /dev/null 2>&1
+yum install -y http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/pgdg-redhat94-9.4-2.noarch.rpm
+yum install -y postgresql94-server postgresql94-contrib
+
 
 /bin/cp /vagrant/puppet/site_pp.prod /etc/puppetlabs/code/environments/production/manifests/site.pp
 /bin/cp /vagrant/puppet/autosign.conf /etc/puppetlabs/puppet/autosign.conf
@@ -14,8 +17,6 @@ yum install -y puppetserver > /dev/null 2>&1
 systemctl enable puppetserver
 systemctl start puppetserver
 
-yum install -y http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/pgdg-redhat94-9.4-2.noarch.rpm
-yum install -y postgresql94-server postgresql94-contrib
 /usr/pgsql-9.4/bin/postgresql94-setup initdb
 /bin/cp /vagrant/puppet/pg_hba.conf /var/lib/pgsql/9.4/data/
 systemctl enable postgresql-9.4.service

@@ -11,7 +11,6 @@ yum install -y puppet-agent > /dev/null 2>&1
 # puppet resource package puppet ensure=latest
 
 /bin/cp /vagrant/puppet/puppet_conf.node /etc/puppetlabs/puppet/puppet.conf
-/bin/cp /vagrant/puppet/site_pp.node /etc/puppetlabs/code/environments/production/manifests/site.pp
 
 
 PATH=/opt/puppetlabs/bin:$PATH;export PATH

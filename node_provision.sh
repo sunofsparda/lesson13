@@ -1,7 +1,7 @@
 #!/bin/bash
 
-grep -q -F '192.168.100.101 puppet-prod.local' /etc/hosts || echo '192.168.100.101 puppet-prod.local' >> /etc/hosts
-grep -q -F '192.168.100.102 puppet-node1.local' /etc/hosts || echo '192.168.100.102 puppet-node1.local' >> /etc/hosts
+grep -q -F '192.168.100.101 puppet-server' /etc/hosts || echo '192.168.100.101 puppet-server' >> /etc/hosts
+grep -q -F '192.168.100.102 puppet-node1' /etc/hosts || echo '192.168.100.102 puppet-node1' >> /etc/hosts
 
 
 yum install -y epel-release > /dev/null 2>&1

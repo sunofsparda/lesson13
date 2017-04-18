@@ -1,6 +1,6 @@
 File { backup => false }
 
-node 'puppet-node1.local' {
+node 'puppet-node1' {
   class { 'nginx': }
   class { '::mysql::server':
     root_password => 'password',

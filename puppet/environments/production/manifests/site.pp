@@ -1,8 +1,7 @@
 File { backup => false }
 
-node 'puppet-prod.local' {
-  class { 'puppetdb':
-    listen_address => '192.168.100.101',  }
+node 'puppet-server' {
+  class { 'puppetdb': }
   
   class {'::puppetexplorer':
     vhost_options => {

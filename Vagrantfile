@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
     
     # VM1
     config.vm.define :svr do |svr_puppet|
-      svr_puppet.vm.host_name = "puppet-server"
+      svr_puppet.vm.host_name = "puppet-server.minsk.epam.com"
       svr_puppet.vm.network "private_network", ip:"192.168.100.101"
       svr_puppet.vm.provider :virtualbox do |vbox|
          vbox.customize ["modifyvm", :id, "--memory", "4096"]
@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
 
     # VM2
     config.vm.define :node1 do |node_puppet|
-      node_puppet.vm.host_name = "puppet-node1"
+      node_puppet.vm.host_name = "puppet-node1.minsk.epam.com"
       node_puppet.vm.network "private_network", ip:"192.168.100.102"
       node_puppet.vm.provider :virtualbox do |vbox|
         vbox.customize ["modifyvm", :id, "--memory", "2048"]

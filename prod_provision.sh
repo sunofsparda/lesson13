@@ -27,7 +27,7 @@ PATH=/opt/puppetlabs/bin:$PATH;export PATH
 
 
 iptables -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
-service iptables restart
+systemctl restart iptables
 
 
 # PuppetDB » Connecting Puppet Masters to PuppetDB

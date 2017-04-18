@@ -45,7 +45,7 @@ puppet module install puppet-nginx --version 0.6.0 --environment prod
 puppet module install puppetlabs-mysql --version 3.10.0 --environment prod
 
 
-puppet agent -t --verbose
+puppet agent -t --verbose --debug
 
 
 echo 'provisioned'

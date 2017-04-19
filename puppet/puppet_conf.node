@@ -1,0 +1,5 @@
+[main]
+certname = node.lab
+server = server.lab
+environment = prod
+runinterval = 3m

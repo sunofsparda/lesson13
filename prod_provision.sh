@@ -1,5 +1,3 @@
-#!/bin/bash
-
 grep -q -F '192.168.100.101 server.lab' /etc/hosts || echo '192.168.100.101 server.lab' >> /etc/hosts
 grep -q -F '192.168.100.102 node.lab' /etc/hosts || echo '192.168.100.102 node.lab' >> /etc/hosts
 
@@ -21,7 +19,7 @@ systemctl restart puppetserver
 
 setsebool -P httpd_can_network_connect on
 
-source ~/.bashrc
+#source ~/.bashrc
 
 yum install postgresql94-server postgresql94-contrib -y
 /usr/pgsql-9.4/bin/postgresql94-setup initdb
